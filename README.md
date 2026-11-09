@@ -7,7 +7,6 @@ Stanford CS 231N: Deep Learning for Computer Vision · Team of 3 · [Poster](CS_
 ## Highlights
 
 - Raised contamination recall on real photos from 0% to 48% by adding synthetic training images (recall is the share of contaminated items the model catches)
-- Assembled a test set of 1,403 real waste photos from the TACO dataset, with hand-drawn outlines for all 100 contaminated items
 - Trained a ResNet-50 (a standard image recognition network) in PyTorch to predict 3 things at once: waste type, whether contamination is present, and which pixels it covers
 - Traced the remaining gap with Grad-CAM heatmaps, which show where the model looks: it learned the look of synthetic stains, not contamination itself
 
@@ -15,13 +14,7 @@ Stanford CS 231N: Deep Learning for Computer Vision · Team of 3 · [Poster](CS_
 
 Python · PyTorch · NumPy · Grad-CAM
 
-## My role
-
-Owned model development: architecture, training and evaluation code, and experiments.
-
-## Team
-
-Natnael Tadesse (dataset preparation and annotation), Kennesha Garg (literature review and analysis), Christian Roy (model development)
+---
 
 ## Results
 
@@ -33,8 +26,6 @@ Natnael Tadesse (dataset preparation and annotation), Kennesha Garg (literature 
 | 100% synthetic data | Synthetic validation set | n/a | 1.000 | **0.759** |
 
 Recall is the share of contaminated items caught. F1 balances catching items against false alarms (0 to 1). mIoU measures how well the predicted outline overlaps the real one (0 to 1). Condition names follow our final report. A model trained only to sort waste type reaches 60% accuracy on the ZeroWaste validation set.
-
----
 
 ## What it does
 
