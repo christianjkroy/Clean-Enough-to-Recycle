@@ -1,8 +1,40 @@
-# Clean Enough to Recycle? A Multi-Task CV Approach to Contamination-Aware Waste Sorting
+# Clean Enough to Recycle?
 
-A multi-task computer vision pipeline for contamination-aware waste sorting, classifying waste type and detecting whether contamination is present and where.
+**Multi-task computer vision model that classifies waste, detects contamination, and outlines where it is.**
 
-Train a model on clean waste images, optionally augment with synthetic contamination, and evaluate on real-world contaminated samples from TACO. Four experimental conditions progressively add heads and augmentation to isolate each component's contribution.
+Stanford CS 231N: Deep Learning for Computer Vision · Team of 3 · [Poster](CS_231N_Poster.pdf)
+
+## Highlights
+
+- Built a multi-task ResNet-50 from scratch in PyTorch with heads for waste classification, contamination detection, and pixel-level localization
+- Created the first contamination-labeled test set of real waste photos: 1,403 TACO images with hand-drawn masks for all 100 contaminated items
+- Raised contamination recall on real photos from 0% to 48% with synthetic training data, and reached 76% mIoU on synthetic test images
+- Used Grad-CAM to show the remaining gap comes from the model learning the look of synthetic stains, not contamination itself
+
+## Built with
+
+Python · PyTorch · NumPy · Grad-CAM
+
+## My role
+
+Led model development and experimentation: architecture, training and evaluation infrastructure, and running experiments.
+
+## Team
+
+Natnael Tadesse (dataset preparation and annotation), Kennesha Garg (literature review and analysis), Christian Roy (model development)
+
+## Results
+
+| Condition | Test set | Contamination recall | Contamination F1 | Localization mIoU |
+|---|---|---|---|---|
+| No synthetic data | 1,403 real TACO images | 0% | 0.000 | 0.000 |
+| 50% synthetic data | 1,403 real TACO images | **48%** | **0.138** | 0.017 |
+| 100% synthetic data | 1,403 real TACO images | 18% | 0.094 | 0.016 |
+| 100% synthetic data | Synthetic validation set | n/a | 1.000 | **0.759** |
+
+Condition names follow our final report. The classification-only baseline reaches 60% accuracy on ZeroWaste validation.
+
+---
 
 ## What it does
 
