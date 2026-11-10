@@ -1,8 +1,8 @@
-# Clean Enough to Recycle?
+# Clean Enough to Recycle
 
 **A computer vision model that sorts waste, spots contamination, and outlines where it is.**
 
-Stanford CS 231N: Deep Learning for Computer Vision · Team of 3 · [Poster](CS_231N_Poster.pdf)
+Stanford CS 231N: Deep Learning for Computer Vision · Spring 2026 · Team of 3 · [Poster](CS_231N_Poster.pdf)
 
 ## Highlights
 
